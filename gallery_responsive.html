@@ -1,0 +1,305 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>DECADENCE HOUSE</title>
+<meta name="keywords" content="DECADENCE HOUSE" />
+<meta name="description" content="DECADENCE HOUSE" />
+<meta http-equiv="Content-Language" content="ru">
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+<LINK href="/favicon.ico" type=image/x-icon rel="shortcut icon">
+<LINK href="/favicon.ico" type=image/x-icon rel=icon>
+	<link href="/css/style.css" rel="stylesheet" type="text/css">
+	<link href="/css/responsive.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]>
+	<link href="css/style_ie.css" rel="stylesheet" type="text/css">
+	<![endif]-->
+	<script type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>
+    <!--for_bg-->
+	<script type="text/javascript" src="/js/my_scripts.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			addDataNumberImg(bgConteiner);
+			$(bgConteiner).children('img:first').addClass('last_img');
+			$('#cont_button > div').click(function(){
+				if( !$(this).hasClass('active') && !$(bgConteiner).data('animate') ){
+					$('#cont_button > .active').removeClass('active');
+					$(this).addClass('active');
+					clickNextSlide(bgConteiner, $('#cont_button > div').index(this), 500);
+				}
+			});
+		});
+		$(window).load(function(){
+			setHeightImages(bgConteiner);
+			$(window).resize(function(){
+				setHeightImages(bgConteiner);
+			});
+		});
+		$(window).unload(function(){
+			var imgSrc = $(bgConteiner).children('img:last').attr('src');
+			set_cookie ( "imgSrc", imgSrc );
+		});
+	</script>
+    <!--click_for_bg-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('a.next').click(function(){
+				if( $('#cont_button div.active').next().is('div') ){
+					$('#cont_button div.active').removeClass('active').next('div').click().addClass('active');
+				}
+				else {
+					$('#cont_button div.active').removeClass('active');
+					$('#cont_button div:first').click().addClass('active');
+				}
+			});
+			$('a.prev').click(function(){
+				if( $('#cont_button div.active').prev().is('div') ){
+					$('#cont_button div.active').removeClass('active').prev('div').click().addClass('active');
+				}
+				else {
+					$('#cont_button div.active').removeClass('active');
+					$('#cont_button div:last').click().addClass('active');
+				}
+			});
+		});
+	</script>
+    <!--click_for_bg-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#cont_button div:first').click();
+		});
+	</script>
+    <!--click_for_bg-->
+	<script type="text/javascript"> 
+		$(document).ready(function(){
+			setInterval(function(){$('#cont_box a.next').click();}, 7000);
+		});
+    </script>
+    <!-- karusel -->
+    <script type="text/javascript" src="/js/karusel/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="/js/karusel/jcarousellite.js"></script>
+	<script type="text/javascript"> 
+		$(function(){ 
+			var size = $(".karusel > div li").length;
+			if( size > 6 ){
+				$(".karusel > div").jCarouselLite({ 
+					btnNext: ".next2", 
+					btnPrev: ".prev2",
+					circular: false,
+       				speed: 1000,
+					visible: 6
+				});
+			} else { $('.next2, .prev2').hide(); }
+			$('.next, .prev').click(function(){return false;});
+		    if(!$('.karusel > div li').prev().is('*')){ $('.prev2').addClass('disabled'); }
+			if(!$('.karusel > div li').next().is('*')){ $('.next2').addClass('disabled'); }
+		}); 
+	</script>
+    <!--click_img-->
+	<script type="text/javascript"> 
+		$(document).ready(function(){
+			$('#big_foto a').eq(0).fadeIn();
+			$('.karusel div ul li').eq(0).addClass('active');
+			
+			$('.karusel div ul li').click(function(){
+				 if(!$(this).hasClass('active')){
+					$('.karusel div ul li.active').removeClass('active');
+					$(this).addClass('active');	
+					
+					var linkIndex2 = $('.karusel div ul li').index($(this));
+					$('#big_foto > a').fadeOut(500);
+					$('#big_foto > a').eq(linkIndex2).fadeIn(500);
+				}
+				return false;
+			});
+		}); 
+	</script>
+	<!-- fancy -->
+	<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+	<script type="text/javascript" src="/fancybox/jquery.easing-1.3.pack.js"></script>
+	<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){ $(".gallery").fancybox({'padding': 0, 'scrolling':'no', 'transitionIn': 'none', 'width':'440px', 'height':'383px', 'background':'000', 'overlayOpacity':0.5, 'overlayColor':'#160a05'});});
+	</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37310251-1']);
+  _gaq.push(['_setDomainName', 'besteventscatering.com.ua']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></head>
+<body>
+    <div id="wrapper_all">
+    	<style>
+    #blog .interior{
+        position: fixed;
+        top: 190px;
+        right: 5px;
+        width: 36px;
+        height: 218px;
+        background: url(img/int_ru.png) no-repeat 0 0;
+        overflow: hidden;
+        text-decoration: none;
+    }
+    #blog a{
+    	text-indent: -1983em;
+    }
+    #slogan_ru{
+		text-indent: -2000em;
+    }
+</style>
+<div id="blog">
+<!-- <a href="http://caterer.com.ua/" class="close" target="_blank" style="background:url(../img/blog_ru.png) no-repeat 0px bottom;"></a> -->
+<a href="http://caterer.com.ua/" target="_blank" class="open" style="background:url(../img/blog_ru.png) no-repeat 0px bottom;">Блог</a>
+<a href="http://besteventscatering.com.ua/company/interior/"  class="interior open" style="background:url(../img/int_ru.png) no-repeat 0px 0;">Уникальный интерьер</a>
+
+</div>
+    	        <div id="bg">
+        	<img src="/files/page_images/bg_photo-ru.jpg" width="100%">
+	        <div class="bg_title"></div>
+		</div>
+                		<div id="header">
+			<div id="header_main">
+            	<div id="lang">
+                    <a class="active" href="/">RUS</a>
+                    <a  href="/en/">ENG</a>
+                </div><!--lang-->
+                <div id="e_mail">
+                    <p>e-mail: <a href="mailto:info@bec.com.ua">info@bec.com.ua</a></p>
+                </div><!--e_mail-->
+            	<div id="phone_soc">
+                 <p><span>044</span> 561 51 51</p>
+                    <a class="fb" href="http://www.facebook.com/pages/Best-Events-Catering/366591770054587" target="_blank"><i class="fa fa-facebook"></i></a>					
+					<a class="gp" href="https://plus.google.com/105835030017128034600" rel="publisher" target="_blank"><i class="fa fa-google-plus"></i></a>
+                </div>
+                            	<a class="header_logo" href="/"><img src="/img/besteventscatering_logo_ru.png" width="201" height="145" alt="Профессиональный кейтеринг - организация торжеств, фуршетов, банкетов в Киеве" title="Профессиональный кейтеринг - организация торжеств, фуршетов, банкетов в Киеве"></a>
+                                <ul>
+                	                    <li><a  href="/">Главная</a></li>
+                                        <li><a  href="/company/">Компания</a></li>
+                                            <li><a href="http://www.gallery.besteventscatering.com.ua/" target="_blank">Галерея</a></li>
+                    	<li><a href="http://www.besteventscatering.com.ua/video.php" >Видео</a></li>
+
+                                        <li><a  href="/order/">Заказать </a></li>
+                                        <li><a  href="/contacts/">Контакты</a></li>
+                                    </ul>
+            </div>
+		</div><!--#header-->
+	    <div id="cont_box">
+		    		    <div id="content">
+            	<div id="wrapper_colum">
+                	
+					<a href="/photo/" class="back" style="margin-left:97px;">Вернуться в галерею</a>
+                    <a style="float: right; margin-right:97px;" class="back" href="http://gallery.besteventscatering.com.ua/" target="_blank">Посмотреть все фото</a>
+                    <div id="big_foto">
+                    	                    	<a class="gallery" rel="group" href="/files/gallery/1400.jpg"><img src="/files/gallery/1400_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1401.jpg"><img src="/files/gallery/1401_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1402.jpg"><img src="/files/gallery/1402_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1403.jpg"><img src="/files/gallery/1403_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1404.jpg"><img src="/files/gallery/1404_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1405.jpg"><img src="/files/gallery/1405_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1406.jpg"><img src="/files/gallery/1406_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1407.jpg"><img src="/files/gallery/1407_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1408.jpg"><img src="/files/gallery/1408_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1409.jpg"><img src="/files/gallery/1409_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1410.jpg"><img src="/files/gallery/1410_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1411.jpg"><img src="/files/gallery/1411_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1412.jpg"><img src="/files/gallery/1412_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1413.jpg"><img src="/files/gallery/1413_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1414.jpg"><img src="/files/gallery/1414_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1415.jpg"><img src="/files/gallery/1415_b.jpg" alt="" title=""></a>
+                                            	<a class="gallery" rel="group" href="/files/gallery/1416.jpg"><img src="/files/gallery/1416_b.jpg" alt="" title=""></a>
+                                            </div>
+                    <div class="karusel">
+                        <div> 
+                            <ul> 
+                            	                                <li><a href="#"><img src="/files/gallery/1400_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1400_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1401_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1401_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1402_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1402_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1403_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1403_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1404_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1404_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1405_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1405_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1406_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1406_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1407_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1407_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1408_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1408_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1409_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1409_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1410_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1410_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1411_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1411_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1412_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1412_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1413_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1413_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1414_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1414_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1415_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1415_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                                <li><a href="#"><img src="/files/gallery/1416_s.jpg" width="80" height="80" alt="" /><img class="bw" src="/files/gallery/1416_s_bw.jpg" width="80" height="80" alt="" /></a></li> 
+                                                            </ul>                  
+                        </div> 
+                        <a href="#" class="prev2 disabled"></a>
+                        <a href="#" class="next2"></a>
+                    </div><!--karusel-->
+                </div><!--wrapper_colum-->
+		    </div><!--content-->
+            <div class="clear"></div>
+	    </div><!--cont_box-->
+        <div class="clear"></div>
+    </div><!--wrapper_all-->
+    <div class="clear"></div>
+	<div id="footer">
+    	<div><p>© 2015. TM Best Events Catering</p><p><span>Разработка сайта:</span><a href="http://www.yarche.in.ua" target="_blank"><img src="/img/yarche.jpg"></a></p>
+    	<div class="footer__links"><a href="http://besteventscatering.com.ua/events/banquet/"> Банкет </a> 
+
+<a href="http://besteventscatering.com.ua/events/furshet/"> Фуршет </a>
+
+<a href="http://besteventscatering.com.ua/events/lanch/"> Ланч </a>
+
+<a href="http://besteventscatering.com.ua/events/coffee-break/"> Кофе-брейк </a>
+
+<a href="http://besteventscatering.com.ua/events/detskiy_prazdnik/ "> Коктейль </a>
+
+<a href=" http://besteventscatering.com.ua/events/bbq/ "> Пикник-барбекю </a></div>
+<style type="text/css">
+	.footer__links{
+		line-height: 1.3;
+		float: none;
+		margin-top: 10px;
+		text-align: left;
+		clear: both;
+	}
+	.footer__links a{
+		margin-right: 10px;
+	}
+	.footer__links a:hover{
+		color: #eee;
+	}
+</style>
+        	        </div>
+    </div><!--#footer-->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter16925941 = new Ya.Metrika({id:16925941, enableAll: true, webvisor:true});
+        } catch(e) { }
+    });
+    
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/16925941" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter --></body>
+</html>
