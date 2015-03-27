@@ -11,7 +11,7 @@ include("init.php"); ?>
 <meta http-equiv="Content-Language" content="<?=$lang;?>">
 <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 <LINK href="/favicon.ico" type=image/x-icon rel="shortcut icon">
-<LINK href="/favicon.ico" type=image/x-icon rel=icon>
+<LINK href="/favicon.ico" type=image/x-icon rel=icon>   
 <link href="/css/style.css?123" rel="stylesheet" type="text/css">
 <link href="/css/responsive.css" rel="stylesheet" type="text/css">
 <link rel="canonical" href="<?php echo htmlspecialchars(($_SERVER['HTTPS']? 'https://': 'http://').$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>">
